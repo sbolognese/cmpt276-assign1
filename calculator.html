@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" type ="text/css" href="calculator.css">
+
+</head>
+<body>
+  <div id="wrapper">
+  <div id="page">
+  <h1>Grade Calculator</h1>
+  <div id="calculator">
+  <h2>Activities</h2>
+  <p>Give grades to the numeric activities:</p>
+    <form id="gradeCalculator">
+    <table>
+      <tr>
+          <th>Name</th>
+          <th>Short Name</th>
+          <th>Grade</th>
+          <th>Percentage</th>
+      </tr>
+      <tr>
+        <td>Activity 1</td>
+        <td>A1</td>
+        <td> <input type="number" class="grade" name="a1grade" id="a1grade" min="0" value="0" onchange="calcPercent('a1grade','a1possible','perc1')"/> / <input type="number" class="possible" name="a1possible" id="a1possible" value="0" min="0" onchange="calcPercent('a1grade','a1possible','perc1')"/> </td>
+        <td id="perc1"></td>
+      </tr>
+      <tr>
+        <td>Activity 2</td>
+        <td>A2</td>
+        <td> <input type="number" class="grade" name="a2grade" id="a2grade" min="0" value="0" onchange="calcPercent('a2grade','a2possible','perc2')"/> / <input type="number" class="possible" name="a2possible"  id="a2possible" value="0" min="0" onchange="calcPercent('a2grade','a2possible','perc2')"/> </td>
+        <td id="perc2"></td>
+      </tr>
+      <tr>
+        <td>Activity 3</td>
+        <td>A3</td>
+        <td> <input type="number" class="grade" name="a3grade" id="a3grade" min="0" value="0" onchange="calcPercent('a3grade','a3possible','perc3')"/> / <input type="number" class="possible" name="a3possible"  id="a3possible" value="0" min="0"" onchange="calcPercent('a3grade','a3possible','perc3')"/> </td>
+        <td id="perc3"></td>
+      </tr>
+      <tr>
+        <td>Activity 4</td>
+        <td>A4</td>
+        <td> <input type="number" class="grade" name="a4grade" id="a4grade" min="0" value="0" onchange="calcPercent('a4grade','a4possible','perc4')"/> / <input type="number" class="possible" name="a4possible" id="a4possible" value="0" min="0" onchange="calcPercent('a4grade','a4possible','perc4')"/> </td>
+        <td id="perc4"></td>
+      </tr>
+      <tr>
+        <td id="totalprompt"><b>TOTAL</b></td>
+        <td></td>
+        <td></td>
+        <td><b><span id="totalPercent"></span></b></td>
+      </tr>
+    </table>
+    <p><button type="button" name="mean" id="mean" onclick="calcMean()">MEAN</button><button type="button" name="average" id="average" onclick="calcAverage()">AVERAGE</button></p>
+    </form>
+    </div>
+    </div>
+  </div>
+<script src="calculator.js"></script>
+</body>
+</html>

@@ -1,13 +1,14 @@
 //Javascript for Calculator page
-// First created: May 13, 2016
-// Last edited:
 // By: Sabrina Bolognese
 
 function postResult(type, place, possible, percent){
-  //if not dividing by zero, print the result in the corresponding section of the table
+  //if not dividing by zero or a negative number,
+  //print the result in the corresponding section of
   //otherwise, print N/A
-  //if we have a type1 change (a recalculation of a given grade percentage), we change the colour of a previously calculated mean or average to alert the user that it is an expired number
-  if (possible != 0) {
+  //if we have a type1 change (a recalculation of a given grade percentage),
+  //we change the colour of a previously calculated mean or average to alert
+  //the user that it is an expired number
+  if (possible > 0) {
     if (type == 1){
       document.getElementById(place).innerHTML = percent +"%";
       document.getElementById("totalPercent").style.color = "rgb(80%,8%,8%)";
@@ -31,7 +32,7 @@ function calcAverage(){
  var grade = 0;
  var possible =0;
  for(i = 0; i<grades.length; i++){
-   if (possibles[i].value != 0){
+   if (possibles[i].value > 0){
      grade = grade + parseFloat(grades[i].value);
      possible = possible + parseFloat(possibles[i].value);
    }
@@ -49,7 +50,7 @@ function calcMean(){
  var percent = 0;
  var possible = 0;
  for(i=0;i<grades.length;i++){
-   if (possibles[i].value != 0){
+   if (possibles[i].value > 0){
       possible++;
       percent = percent+  ((parseFloat(grades[i].value)/parseFloat(possibles[i].value))*100);
     }
